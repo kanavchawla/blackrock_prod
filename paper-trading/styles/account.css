@@ -1,0 +1,143 @@
+main {
+  margin-top: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-form {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.column-form h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.column-form section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.column-form label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.column-form input[type='button'] {
+  border-radius: 20px;
+  background-color: rgb(56, 97, 251);
+  color: white;
+  border: none;
+  height: 35px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.column-form input[type='button']:hover,
+.column-form input[type='button']:focus {
+  background-color: rgb(56, 97, 214);
+}
+
+.column-form input[type='password'],
+.column-form input[type='email'] {
+  height: 30px;
+  border: none;
+  border-bottom: solid 1px black;
+  font-size: 1.5rem;
+}
+.column-form input[type='password']::-webkit-input-placeholder {
+  transform: translate3d(0, 1.5px, 0);
+}
+
+.column-form .form-options {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 3rem;
+}
+
+.form-options .forgot-pass a {
+  color: rgb(56, 97, 251);
+  text-decoration: none;
+}
+
+.form-options .forgot-pass a:hover,
+.form-options .forgot-pass a:focus {
+  color: rgb(63, 95, 214);
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.signup {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+.signup a {
+  font-size: inherit;
+  text-decoration: none;
+  color: rgb(56, 97, 251);
+}
+.signup a:hover,
+.signup a:focus {
+  color: rgb(63, 95, 214);
+}
+
+@media (min-width: 600px) {
+  .column-form {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 688px) {
+  .hamburger {
+    display: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
+    justify-content: flex-end;
+  }
+  nav ul {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.6rem;
+  }
+
+  header {
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav a {
+    font-size: 2.2rem;
+  }
+  nav a {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .column-form {
+    max-width: 650px;
+  }
+}

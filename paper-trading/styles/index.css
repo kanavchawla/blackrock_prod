@@ -1,0 +1,145 @@
+img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+main {
+  padding: 0 2rem;
+}
+table * {
+  font-size: 1.4rem;
+}
+.table-container {
+  max-width: fit-content;
+  max-height: fit-content;
+  overflow-x: scroll;
+}
+
+table {
+  min-width: max-content;
+  border-collapse: collapse;
+}
+
+table th {
+  z-index: 2;
+  text-align: right;
+}
+
+.align {
+  text-align: right;
+}
+
+td,
+th {
+  padding: 0.9rem;
+}
+
+td:first-child,
+th:first-child {
+  background-color: white;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+  background-color: white;
+  position: sticky;
+  left: 2.5rem;
+  z-index: 1;
+}
+
+th:first-child,
+th:nth-child(2) {
+  z-index: 3;
+  text-align: left;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wrapper div {
+  display: flex;
+}
+
+.symbol {
+  color: rgba(0, 0, 0, 85%);
+}
+.name {
+  display: flex;
+  flex-direction: column;
+}
+.name span:first-of-type {
+  font-weight: 500;
+}
+.name span {
+  line-height: normal;
+}
+
+.positive {
+  color: #16c784;
+  font-weight: 500;
+}
+
+.negative {
+  color: #ea3943;
+  font-weight: 500;
+}
+
+.coin:hover * {
+  background-color: rgb(234, 232, 232);
+  cursor: pointer;
+}
+tr:nth-of-type(2n) * {
+  background-color: rgb(246, 244, 244);
+}
+
+@media (min-width: 688px) {
+  .table-container {
+    overflow-x: visible;
+    margin: auto;
+  }
+  .hamburger {
+    display: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
+    justify-content: flex-end;
+  }
+  nav ul {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.6rem;
+  }
+
+  header {
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  table *,
+  nav a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  table *,
+  nav a {
+    font-size: 2.2rem;
+  }
+  nav a {
+    padding: 3rem;
+  }
+}

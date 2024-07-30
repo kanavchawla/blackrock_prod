@@ -1,0 +1,103 @@
+main {
+  padding: 0 2rem;
+}
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+legend,
+label,
+p,
+.amount {
+  font-size: 1.8rem;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  border: solid 1px black;
+  min-width: 75px;
+  color: black;
+}
+
+span {
+  font-size: inherit;
+}
+
+main button {
+  display: block;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(56, 97, 251);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+form {
+  text-align: center;
+}
+
+.balance-container {
+  background-color: rgba(0, 62, 193, 0.03);
+  width: fit-content;
+  margin: auto;
+  padding: 3rem;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 530px) {
+  .balance-container * {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 650px) {
+  .balance-container * {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 688px) {
+  .hamburger {
+    display: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
+    justify-content: flex-end;
+  }
+  nav ul {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.6rem;
+  }
+
+  header {
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav a {
+    font-size: 2.2rem;
+    padding: 3rem;
+  }
+}

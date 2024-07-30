@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/default.css" />
+    <link rel="stylesheet" href="/styles/crypto-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/scripts/crypto-detail.js" type="module" defer></script>
+    <script src="/scripts/hamburger.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>MockMarkets | Crypto Details</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay"></div>
+      <section class="container">
+        <h1><a href="../index.html">MockMarkets</a></h1>
+        <button class="hamburger">
+          <i class="fa-solid fa-bars hamburger"></i>
+        </button>
+      </section>
+      <nav>
+        <ul>
+          <li><a href="/pages/watchlist.html">watchlist</a></li>
+          <li><a href="../index.html">trade</a></li>
+          <li><a href="/pages/balance.html">balance</a></li>
+          <!-- <li><a href="#">notifications</a></li>
+          <li><a href="/pages/account.html">account</a></li> -->
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="coin-details" class="coin-details"></section>
+
+      <!-- <section class="watchlist-container"></section> -->
+      <div class="modal" id="modal">
+        <section class="modal-content">
+          <span class="close">&times;</span>
+          <div class="anchors">
+            <a href="/pages/stock-calculator.html" id="buy" class="buy-coin">
+              <i class="fa-sharp fa-solid fa-plus"></i>
+              <div class="btn-text">
+                <span class="span-header buy"></span>
+                <span class="span-subtext buy"></span>
+              </div>
+            </a>
+            <a href="/pages/stock-calculator.html" id="sell" class="sell-coin">
+              <i class="fa-sharp fa-solid fa-minus"></i>
+              <div class="btn-text">
+                <span class="span-header sell"></span>
+                <span class="span-subtext sell"></span>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
