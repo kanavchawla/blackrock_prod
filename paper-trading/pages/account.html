@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/default.css" />
+  <link rel="stylesheet" href="/styles/account.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="/scripts/hamburger.js" defer></script>
+  <title>MockMarkets | Crypto Details</title>
+</head>
+
+<body>
+  <header>
+    <div class="overlay"></div>
+    <section class="container">
+      <h1><a href="/index.html">MockMarkets</a></h1>
+      <button class="hamburger">
+        <i class="fa-solid fa-bars hamburger"></i>
+      </button>
+    </section>
+    <nav>
+      <ul>
+        <li><a href="/pages/watchlist.html">watchlist</a></li>
+        <li><a href="#">trade</a></li>
+        <li><a href="/pages/balance.html">balance</a></li>
+        <li><a href="#">notifications</a></li>
+        <li><a href="/pages/account.html">account</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <form class="column-form">
+      <h1>Sign in to your account</h1>
+      <section>
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" placeholder="name@company.com" required />
+      </section>
+      <section>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="***********" required />
+      </section>
+      <section class="form-options">
+        <div class="remember">
+          <input type="checkbox" id="remember-me" name="remember-me" />
+          <label for="remember-me">Remember Me</label>
+        </div>
+        <div class="forgot-pass">
+          <a href="#">Forgot password?</a>
+        </div>
+      </section>
+      <section>
+        <input type="button" value="Login" />
+      </section>
+      <div class="signup">
+        Don't have an account yet? <a href="#">Sign up</a>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>

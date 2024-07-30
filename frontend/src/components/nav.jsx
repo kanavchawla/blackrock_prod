@@ -1,6 +1,16 @@
-import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import {logout} from "../services/operations/auth"
 
 const Nav = () => {
+  const { token } = useSelector((state) => state.auth);
+  const dispatch  = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout(navigate));
+  };
   return (
     <nav class="container flex items-center justify-around pt-4 pb-3 sticky top-0 z-50">
       <div
@@ -49,13 +59,22 @@ const Nav = () => {
       <div class="flex items-center gap-4">
         <div style={{ transform: "none", transformOrigin: "100% 50% 0px" }}>
           <div class="flex gap-3 ">
-            <button
+            {!token && (<Link
               // style={{position:"relative",right:"90px"}}
+              to="/login"
               type="button"
               class="bg-blue-500 text-white inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale bg-primary text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-5 md:px-7 py-2 md:py-3 shadow-lg"
             >
-              Sign up
-            </button>
+              Sign In
+            </Link>)}
+            {token && (<button
+              // style={{position:"relative",right:"90px"}}
+              type="button"
+              onClick={handleLogout}
+              class="bg-blue-500 text-white inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale bg-primary text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-5 md:px-7 py-2 md:py-3 shadow-lg"
+            >
+              Sign Out
+            </button>)}
             <button class="relative h-12 w-12 shrink-0 cursor-pointer select-none rounded-full p-2 transition-all duration-300 focus:outline-none lg:hidden bg-gray-50 bg-opacity-60 hover:bg-opacity-80 backdrop-blur text-gray-900">
               <span class="sr-only">open menu</span>
               <div class="absolute left-1/2 top-1/2 block w-5 -translate-x-1/2 -translate-y-1/3 transform">

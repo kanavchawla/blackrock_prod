@@ -1,0 +1,96 @@
+/* default css for body and header */
+* {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.5;
+  /* color: #ffffff; */
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
+body, .hamburger,input,button {
+    /* background-color: #292c2c; */
+    background: #ffffff;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .container a {
+    font-size: 3.2rem;
+    text-decoration: none;
+  }
+  
+  .container h1 a,
+  .container button i {
+    /* color: #ee5246; */
+    color: black;
+  }
+  .container h1 a:hover,
+  .container h1 a:focus,
+  .container button i:hover,
+  .container button i:focus {
+    color: #757575;
+  }
+  
+  button {
+    border: none;
+    cursor: pointer;
+  }
+  button i {
+    font-size: 3rem;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  nav {
+    display: none;
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  nav.show {
+    display: block;
+  }
+  
+  nav a,
+  nav i {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    /* color: #ee5246; */
+    color: black;
+    display: block;
+    transition: 0.3s;
+    text-transform: capitalize;
+  }
+  
+  nav a:hover,
+  nav i:hover,
+  nav a:focus,
+  nav i:focus {
+    color: rgb(56, 97, 251);
+    
+  }
+  
