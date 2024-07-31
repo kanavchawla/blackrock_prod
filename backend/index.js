@@ -22,7 +22,7 @@ app.use(
 app.use(express.json());
 app.use("/api", require("./routes/lmsRoutes.js"));
 app.use("/api", require("./routes/Auth.js"));
-
+app.use('/api', require('./routes/detect.js'));
 app.post("/generate-poster", (req, res) => {
   const { companyName, postDescription } = req.body;
 

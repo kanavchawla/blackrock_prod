@@ -116,7 +116,8 @@ CustomerSchema.pre('save', function (next) {
 
     // Mark as person of interest if scorePercentage is above a threshold, e.g., 70%
     customer.personOfInterest = scorePercentage >= 70;
-
+    console.log("Scene set hora kya ???, ",scorePercentage)
+    console.log("Scene set hora kya ???, TOH DEKH BHAI: ",this.personOfInterest)
     next();
 });
 

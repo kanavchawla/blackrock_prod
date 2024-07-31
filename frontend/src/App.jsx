@@ -17,6 +17,7 @@ import AnswerQuestionPage from "./components/AnswerQuestion";
 import Compare from "./components/compare";
 import PersonalLearningPath from "./components/PersonalLearningPath.js"
 import CaseStudies from "./components/CaseStudies.jsx"
+import CustomerList from "./components/InterestList.jsx"
 function App() {
   return (
     <>
@@ -38,9 +39,8 @@ function App() {
           <Route path="/ViewQuestion" element={<ViewQuestionsPage />} />
           <Route path="/answerquestion/:id" element={<AnswerQuestionPage />} />
           <Route path="/CaseStudies" element={<CaseStudies />} />
-          CaseStudies
           <Route path="/compare" element={<Compare />} />
-          
+          <Route path="/interestList" element={<CustomerList />} />
         </Routes>
       <Footer></Footer>
       </BrowserRouter>

@@ -55,6 +55,12 @@ const Nav = () => {
             GuideX
           </li>
         </a>
+        <a href="/interestList">
+        <li class="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+    POI
+</li>
+
+        </a>
       </ul>
       <div class="flex items-center gap-4">
         <div style={{ transform: "none", transformOrigin: "100% 50% 0px" }}>
