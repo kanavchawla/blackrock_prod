@@ -8,4 +8,22 @@
   box-sizing: border-box;
 }
 
+.goog-logo-link,
+.goog-te-gadget > span:first-child,
+.goog-te-gadget > span:first-child + span {
+  display: none !important;
+}
 
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: #000 !important;
+}
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+  display: none;
+}
+
+.goog-te-combo {
+}

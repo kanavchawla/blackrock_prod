@@ -8,7 +8,7 @@ main {
   padding: 0 2rem;
 }
 table * {
-  font-size: 1.4rem;
+  font-size: 1px;
 }
 .table-container {
   max-width: fit-content;
