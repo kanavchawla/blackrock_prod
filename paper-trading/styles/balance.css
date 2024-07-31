@@ -1,6 +1,8 @@
 main {
+  margin-top: 40px;
   padding: 0 2rem;
 }
+
 h1 {
   font-size: 2.5rem;
   text-align: center;
@@ -10,7 +12,7 @@ legend,
 label,
 p,
 .amount {
-  font-size: 1.8rem;
+  font-size: 1rem;
 }
 
 .amount {
@@ -32,7 +34,7 @@ span {
 
 main button {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   background-color: rgb(56, 97, 251);
   padding: 10px 20px;
@@ -61,7 +63,7 @@ form {
 
 @media (min-width: 650px) {
   .balance-container * {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -69,6 +71,7 @@ form {
   .hamburger {
     display: none;
   }
+
   nav {
     display: flex;
     align-items: center;
@@ -76,6 +79,7 @@ form {
     padding: 2rem;
     justify-content: flex-end;
   }
+
   nav ul {
     display: flex;
   }
