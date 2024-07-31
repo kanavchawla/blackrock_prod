@@ -65,6 +65,18 @@ const Nav = () => {
             Resource finder
           </li>
         </a>
+        <a href="/interestList">
+        <li class="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+    POI
+</li>
+
+        </a>
+        <a href="/interestList">
+        <li class="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+    POI
+</li>
+
+        </a>
 
         {/* Community Dropdown */}
         <div className="relative">
