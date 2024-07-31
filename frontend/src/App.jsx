@@ -15,6 +15,8 @@ import AskQuestionPage from "./components/AskQuestion";
 import ViewQuestionsPage from "./components/ViewQuestion";
 import AnswerQuestionPage from "./components/AnswerQuestion";
 import Compare from "./components/compare";
+import PersonalLearningPath from "./components/PersonalLearningPath.js"
+import CaseStudies from "./components/CaseStudies.jsx"
 function App() {
   return (
     <>
@@ -32,9 +34,11 @@ function App() {
           <Route path="/guidex" element={<Protected><Guidex /></Protected>} />
           <Route path="/search" element={<ResourceSearch />} />
           <Route path="/AskQuestion" element={<AskQuestionPage />} />
+          <Route path="/personal-learning-path" element={<PersonalLearningPath/>} />
           <Route path="/ViewQuestion" element={<ViewQuestionsPage />} />
           <Route path="/answerquestion/:id" element={<AnswerQuestionPage />} />
-
+          <Route path="/CaseStudies" element={<CaseStudies />} />
+          CaseStudies
           <Route path="/compare" element={<Compare />} />
           
         </Routes>
