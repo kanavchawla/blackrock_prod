@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../services/operations/auth";
 import image from "../assets/image.png";
 
@@ -66,6 +66,16 @@ const Nav = () => {
         <a href="/search">
           <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400">
             Resource finder
+          </li>
+        </a>
+        {/* <a href="/interestList">
+          <li className="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+            POI
+          </li>
+        </a> */}
+        <a href="/interestList">
+          <li className="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+            POI
           </li>
         </a>
 
