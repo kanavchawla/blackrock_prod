@@ -15,30 +15,57 @@ import AskQuestionPage from "./components/AskQuestion";
 import ViewQuestionsPage from "./components/ViewQuestion";
 import AnswerQuestionPage from "./components/AnswerQuestion";
 import Compare from "./components/compare";
+import Risk from "./components/risk";
 function App() {
   return (
     <>
       <BrowserRouter>
-      <Nav />
-      <Chatbot />
+        <Nav />
+        <Chatbot />
         <Routes>
           <Route path="/" element={<Home />} />
-          
-          <Route path="/login" element={<Open><Login /></Open>} />
-          
-          
-          <Route path="/lms" element={<Protected><Lms /></Protected>} />
-          <Route path="/uploadvideo" element={<Protected><VideoUpload /></Protected>} />
-          <Route path="/guidex" element={<Protected><Guidex /></Protected>} />
+
+          <Route
+            path="/login"
+            element={
+              <Open>
+                <Login />
+              </Open>
+            }
+          />
+
+          <Route
+            path="/lms"
+            element={
+              <Protected>
+                <Lms />
+              </Protected>
+            }
+          />
+          <Route
+            path="/uploadvideo"
+            element={
+              <Protected>
+                <VideoUpload />
+              </Protected>
+            }
+          />
+          <Route
+            path="/guidex"
+            element={
+              <Protected>
+                <Guidex />
+              </Protected>
+            }
+          />
           <Route path="/search" element={<ResourceSearch />} />
           <Route path="/AskQuestion" element={<AskQuestionPage />} />
           <Route path="/ViewQuestion" element={<ViewQuestionsPage />} />
           <Route path="/answerquestion/:id" element={<AnswerQuestionPage />} />
-
           <Route path="/compare" element={<Compare />} />
-          
+          <Route path="/risk" element={<Risk />} />
         </Routes>
-      <Footer></Footer>
+        {/* <Footer></Footer> */}
       </BrowserRouter>
     </>
   );
