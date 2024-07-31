@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function VideoUpload() {
   const [name, setName] = useState("");
@@ -9,6 +10,11 @@ function VideoUpload() {
   const [location, setLocation] = useState("");
   const [videoTag, setVideoTag] = useState([]);
   const [tagInput, setTagInput] = useState("");
+  const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -79,6 +85,33 @@ function VideoUpload() {
   };
 
   return (
+    <div className="flex">
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-transform transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-64"
+        } w-64 z-50 shadow-lg`}
+        style={{ transition: "transform 0.4s ease-in-out" }}
+      >
+        <div className="p-4">
+          <h2 className="text-2xl font-bold mb-6 border-b-2 border-gray-600 pb-2">Menu</h2>
+          <button
+            className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
+            onClick={() => navigate("/lms")}
+          >
+            Back to LMS
+          </button>
+        </div>
+        <button
+          onClick={toggleSidebar}
+          className="absolute top-1/2 -right-4 transform -translate-y-1/2 p-2 bg-blue-500 text-white rounded-full shadow-md focus:outline-none"
+        >
+          {isSidebarOpen ? "<" : ">"}
+        </button>
+      </div>
+
+      {/* Content */}
+      <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "ml-64" : "ml-8"}`}>
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
@@ -231,6 +264,8 @@ function VideoUpload() {
                   </div>
                 </div>
               </form>
+            </div>
+            </div>
             </div>
           </div>
         </div>
