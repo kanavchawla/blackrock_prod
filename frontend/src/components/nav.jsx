@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../services/operations/auth";
 
 const Nav = () => {
@@ -65,17 +65,15 @@ const Nav = () => {
             Resource finder
           </li>
         </a>
+        {/* <a href="/interestList">
+          <li className="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+            POI
+          </li>
+        </a> */}
         <a href="/interestList">
-        <li class="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
-    POI
-</li>
-
-        </a>
-        <a href="/interestList">
-        <li class="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
-    POI
-</li>
-
+          <li className="cursor-pointer text-green-500 select-none whitespace-nowrap italic rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400 special-list-item">
+            POI
+          </li>
         </a>
 
         {/* Community Dropdown */}
