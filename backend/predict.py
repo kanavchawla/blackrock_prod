@@ -106,3 +106,49 @@ print(
         }
     )
 )
+# import pandas as pd
+# import numpy as np
+# from sklearn.ensemble import RandomForestRegressor
+# from sklearn.impute import SimpleImputer
+# from sklearn.model_selection import train_test_split
+# import joblib
+# import os
+
+# # Load dataset
+# csv_file = "data.csv"
+# df = pd.read_csv(csv_file, parse_dates=['Date'])
+# df.ffill(inplace=True)
+
+# def create_features(df, company_name):
+#     df_company = df[['Date', company_name]].dropna()
+#     df_company['Lag1'] = df_company[company_name].shift(1)
+#     df_company['Lag2'] = df_company[company_name].shift(2)
+#     df_company['Lag3'] = df_company[company_name].shift(3)
+#     df_company.dropna(inplace=True)
+#     return df_company
+
+# def train_model(df_company, company_name):
+#     X = df_company[['Lag1', 'Lag2', 'Lag3']]
+#     y = df_company[company_name]
+
+#     # Impute missing values (if any)
+#     imputer = SimpleImputer(strategy='mean')
+#     X = imputer.fit_transform(X)
+
+#     # Split into train and test sets
+#     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+#     # Train model
+#     model = RandomForestRegressor(n_estimators=100, random_state=42)
+#     model.fit(X_train, y_train)
+
+#     # Save the model and imputer
+#     current_dir = os.path.dirname(os.path.realpath(__file__))
+#     joblib.dump(model, os.path.join(current_dir, f'{company_name}_rf_model.pkl'))
+#     joblib.dump(imputer, os.path.join(current_dir, f'{company_name}_imputer.pkl'))
+
+# # Iterate over each company (skip the 'Date' column)
+# for company_name in df.columns[1:]:
+#     df_company = create_features(df, company_name)
+#     train_model(df_company, company_name)
+#     print(f'Model and imputer for {company_name} saved successfully.')
