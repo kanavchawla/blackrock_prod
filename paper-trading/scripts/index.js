@@ -1,4 +1,4 @@
-import { formatNumber, formatNumberWithDecimal } from './utilities.js';
+import { formatNumber, formatNumberWithDecimal } from "./utilities.js";
 class Coin {
   constructor(
     name,
@@ -11,7 +11,7 @@ class Coin {
     rank,
     volume,
     curSupply,
-    ath,
+    ath
   ) {
     this.name = name;
     this.symbol = symbol;
@@ -30,8 +30,8 @@ class Coin {
   }
 
   render(useFormattedValues) {
-    const coinElement = document.createElement('tr');
-    coinElement.classList.add('coin');
+    const coinElement = document.createElement("tr");
+    coinElement.classList.add("coin");
     coinElement.innerHTML = `
       <td>${this.rank}</td>
       <td>
@@ -46,22 +46,26 @@ class Coin {
         </div>
       </td>
       <td class="align">$${formatNumberWithDecimal(this.price)}</td>
-      <td class="align format">$${useFormattedValues
-        ? formatNumber(this.marketCap)
-        : formatNumberWithDecimal(this.initialMarketCap)
+      <td class="align format">$${
+        useFormattedValues
+          ? formatNumber(this.marketCap)
+          : formatNumberWithDecimal(this.initialMarketCap)
       }</td>
-      <td class="align format">$${useFormattedValues
-        ? formatNumber(this.curSupply)
-        : formatNumberWithDecimal(this.initialCurSupply)
+      <td class="align format">$${
+        useFormattedValues
+          ? formatNumber(this.curSupply)
+          : formatNumberWithDecimal(this.initialCurSupply)
       }</td>
-      <td class="align format">$${useFormattedValues
-        ? formatNumber(this.volume)
-        : formatNumberWithDecimal(this.initialVolume)
+      <td class="align format">$${
+        useFormattedValues
+          ? formatNumber(this.volume)
+          : formatNumberWithDecimal(this.initialVolume)
       }</td>
-      <td class="align ${this.price24Change > 0 ? 'positive' : 'negative'
+      <td class="align ${
+        this.price24Change > 0 ? "positive" : "negative"
       }">${this.price24Change.toFixed(2)}%</td>
     `;
-    coinElement.addEventListener('click', () => {
+    coinElement.addEventListener("click", () => {
       window.location.href = `/pages/crypto-details.html?coin=${this.id}`;
     });
     return coinElement;
@@ -71,7 +75,7 @@ class Coin {
 class CoinList {
   constructor() {
     this.coins = [];
-    this.coinsListElement = document.querySelector('.coins-list');
+    this.coinsListElement = document.querySelector(".coins-list");
     this.useFormattedValues = window.innerWidth <= 800; // Check initial window width
   }
 
@@ -103,8 +107,8 @@ class CoinList {
 
 const coinList = new CoinList();
 
-window.onload = function() {
-  fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
+window.onload = function () {
+  fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < 25; i++) {
@@ -119,18 +123,18 @@ window.onload = function() {
           data[i].market_cap_rank,
           data[i].total_volume,
           data[i].circulating_supply,
-          data[i].ath,
+          data[i].ath
         );
         coinList.addCoin(coin);
       }
     });
 };
 
-if (!localStorage.getItem('accountBalance')) {
-  localStorage.setItem('accountBalance', 0);
+if (!localStorage.getItem("accountBalance")) {
+  localStorage.setItem("accountBalance", 0);
 }
 
-window.addEventListener('resize', function() {
+window.addEventListener("resize", function () {
   const screenWidth = window.innerWidth;
   const useFormattedValues = screenWidth <= 800;
 

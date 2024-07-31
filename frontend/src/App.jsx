@@ -18,11 +18,14 @@ import Compare from "./components/compare";
 import PersonalLearningPath from "./components/PersonalLearningPath.js";
 import CaseStudies from "./components/CaseStudies.jsx";
 import Risk from "./components/risk";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 function App() {
   return (
     <>
       <BrowserRouter>
+        <LanguageSwitcher />
         <Nav />
+
         <Chatbot />
         <Routes>
           <Route path="/" element={<Home />} />
