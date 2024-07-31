@@ -53,10 +53,10 @@ const App = () => {
         Inputs:
         - Company Name: ${company}
         - Initial Investment Amount: $${amount}
-        - Time Period (in months): ${time}
+        - Time Period (in years): ${time}
 
         Outputs:
-        - Risk Factor: ${data.risk_factor}
+        - Risk Factor: ${100 - data.risk_factor}
         - Return on Investment: $${data.investment_return}
 
         Please provide an in-depth analysis that includes:
@@ -144,6 +144,7 @@ const App = () => {
               value={time}
               onChange={(e) => setTime(e.target.value)}
               className="input input-bordered w-full mt-1"
+              placeholder="in years"
               required
             />
           </label>
@@ -159,9 +160,9 @@ const App = () => {
           <div className="w-full md:w-1/2 p-2 flex justify-center items-center">
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 w-full max-w-md flex flex-col justify-center items-center">
               <ReactSpeedometer
-                value={data.risk_factor}
+                value={100 - data.risk_factor}
                 maxValue={100}
-                currentValueText={`Risk Factor: ${data.risk_factor}`}
+                currentValueText={`Risk Factor: ${100 - data.risk_factor}`}
                 needleColor="red"
                 startColor="green"
                 segments={10}
@@ -212,7 +213,7 @@ const App = () => {
           <div className="w-full md:w-4/5 p-2 flex justify-center items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200 w-full flex flex-col justify-center items-center">
               <h2 className="text-2xl font-bold mb-4 text-center">
-                Generative AI Analysis
+                Analysis Report
               </h2>
               <div className="text-left w-full max-w-3xl">
                 {options.map((option, index) => (
