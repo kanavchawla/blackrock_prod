@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { logout } from "../services/operations/auth";
+import image from "../assets/image.png";
 
 const Nav = () => {
   const { token } = useSelector((state) => state.auth);
@@ -21,10 +22,12 @@ const Nav = () => {
   return (
     <nav className="container flex items-center justify-around pt-4 pb-3 sticky top-0 z-50 -mt-8">
       <div
-        className="cursor-pointer rounded-full p-4 transition font-semibold duration-300 lg:py-3.5 lg:px-6 bg-gray-200 bg-opacity-60 hover:bg-opacity-80 backdrop-blur text-gray-900"
+        className="cursor-pointer rounded-full transition font-semibold duration-300 bg-gray-200 bg-opacity-60 hover:bg-opacity-80 backdrop-blur text-gray-900"
         style={{ transform: "none" }}
       >
-        <a href="/">GoCap</a>
+        <a href="/">
+          <img src={image} className="max-w-40 rounded-full "></img>
+        </a>
       </div>
       <ul
         className="hidden items-center gap-1 rounded-full px-4 lg:flex bg-gray-200 bg-opacity-60 hover:bg-opacity-80 backdrop-blur text-gray-900"
