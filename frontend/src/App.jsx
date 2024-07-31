@@ -15,6 +15,9 @@ import AskQuestionPage from "./components/AskQuestion";
 import ViewQuestionsPage from "./components/ViewQuestion";
 import AnswerQuestionPage from "./components/AnswerQuestion";
 import Compare from "./components/compare";
+import PersonalLearningPath from "./components/PersonalLearningPath.js";
+import CaseStudies from "./components/CaseStudies.jsx";
+import Risk from "./components/risk";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 function App() {
   return (
@@ -22,10 +25,10 @@ function App() {
       <BrowserRouter>
         <LanguageSwitcher />
         <Nav />
+
         <Chatbot />
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route
             path="/login"
             element={
@@ -34,7 +37,6 @@ function App() {
               </Open>
             }
           />
-
           <Route
             path="/lms"
             element={
@@ -61,12 +63,18 @@ function App() {
           />
           <Route path="/search" element={<ResourceSearch />} />
           <Route path="/AskQuestion" element={<AskQuestionPage />} />
+          <Route
+            path="/personal-learning-path"
+            element={<PersonalLearningPath />}
+          />
           <Route path="/ViewQuestion" element={<ViewQuestionsPage />} />
           <Route path="/answerquestion/:id" element={<AnswerQuestionPage />} />
-
+          <Route path="/CaseStudies" element={<CaseStudies />} />
+          CaseStudies
           <Route path="/compare" element={<Compare />} />
+          <Route path="/risk" element={<Risk />} />
         </Routes>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </BrowserRouter>
     </>
   );

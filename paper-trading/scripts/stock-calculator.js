@@ -95,7 +95,7 @@ function renderModalDetails() {
   document.querySelector(".modal-content img").src = coinDetailsParsed.image;
   document.querySelector(
     ".amount-text"
-  ).innerHTML = `Buy ${amountValue}<span class="usd"> USD</span>`;
+  ).innerHTML = `Buy ${amountValue}<span class="usd"></span>`;
   document.querySelector(
     ".coin-price"
   ).textContent = `${coinDetailsParsed.symbol.toUpperCase()} price $${

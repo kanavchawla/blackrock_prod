@@ -25,5 +25,6 @@
   display: none;
 }
 
-.goog-te-combo {
+#google_translate_element {
+  z-index: 1000;
 }
