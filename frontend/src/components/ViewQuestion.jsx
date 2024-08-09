@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ViewQuestionsPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -10,13 +10,15 @@ const ViewQuestionsPage = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/questions');
+        const response = await axios.get(
+          "https://blackrock-prod.onrender.com/questions"
+        );
         setQuestions(response.data);
         setLoading(false);
       } catch (err) {
-        setError('Error fetching questions');
+        setError("Error fetching questions");
         setLoading(false);
-        console.error('Error fetching questions:', err);
+        console.error("Error fetching questions:", err);
       }
     };
 
@@ -33,15 +35,18 @@ const ViewQuestionsPage = () => {
 
   return (
     <div className="container mx-auto p-6 max-w-3xl">
-      <h1 className="text-3xl font-semibold mb-10 text-center text-blue-600">All Questions</h1>
+      <h1 className="text-3xl font-semibold mb-10 text-center text-blue-600">
+        All Questions
+      </h1>
       <ul className="space-y-4">
         {questions.length === 0 ? (
           <p className="text-center text-lg">No questions available.</p>
         ) : (
           questions.map((q) => (
-            <li 
-              key={q._id} 
-              className="bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-6 border border-gray-200 mb-4">
+            <li
+              key={q._id}
+              className="bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-6 border border-gray-200 mb-4"
+            >
               <p className="text-lg mb-10">{q.question}</p>
               <Link to={`/answerquestion/${q._id}`} className="btn btn-primary">
                 Answer

@@ -10,7 +10,9 @@ const CustomerList = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/customers");
+        const response = await axios.get(
+          "https://blackrock-prod.onrender.com/api/customers"
+        );
         setCustomers(response.data);
         setLoading(false);
         if (customers) console.log("dekh hi le ab: ", customers);
