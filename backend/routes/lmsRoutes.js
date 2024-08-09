@@ -1,7 +1,7 @@
 const express = require("express");
 const router2 = express.Router();
 const cloudinary = require("cloudinary").v2;
-const Lms = require("../Models/lmsModel");
+const Lms = require("../models/lmsModel");
 const fs = require("fs");
 const dotenv = require("dotenv");
 dotenv.config();
