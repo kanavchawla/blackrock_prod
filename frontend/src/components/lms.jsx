@@ -13,7 +13,7 @@ const Lms = () => {
     const fetchVideos = async () => {
       try {
         const response = await axios.get(
-        "http://localhost:5000/api/allMediaUploads"
+          "https://blackrock-prod.onrender.com/api/allMediaUploads"
         );
         setVideos(response.data);
         const uniqueCategories = new Set(
@@ -53,25 +53,27 @@ const Lms = () => {
         style={{ transition: "transform 0.4s ease-in-out" }}
       >
         <div className="p-4">
-          <h2 className="text-2xl font-bold mb-6 border-b-2 border-gray-600 pb-2">Menu</h2>
+          <h2 className="text-2xl font-bold mb-6 border-b-2 border-gray-600 pb-2">
+            Menu
+          </h2>
           <button
             className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
             onClick={navigateToLearningPath}
           >
             Scopes of this market
           </button>
-            <button
-              className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
-              onClick={() => navigate("/CaseStudies")}
+          <button
+            className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
+            onClick={() => navigate("/CaseStudies")}
           >
             Case Studies
           </button>
           <button
-              className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
-              onClick={() => navigate("/uploadvideo")}
+            className="w-full text-left mb-4 p-3 bg-gray-700 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-600 focus:outline-none"
+            onClick={() => navigate("/uploadvideo")}
           >
             Upload Video
-            </button>
+          </button>
         </div>
         <button
           onClick={toggleSidebar}
@@ -82,7 +84,11 @@ const Lms = () => {
       </div>
 
       {/* Content */}
-      <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "ml-64" : "ml-8"}`}>
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarOpen ? "ml-64" : "ml-8"
+        }`}
+      >
         <div className="heading flex flex-row flex-wrap justify-center mt-10 min-w-full">
           <h1 className="text-5xl font-bold">Learning Management System</h1>
         </div>
@@ -106,14 +112,15 @@ const Lms = () => {
         </div>
         <div className="container flex flex-row flex-wrap mb-16">
           {filteredVideos.map((video, index) => (
-            <div className="card bg-base-100 w-96 shadow-xl mt-10 ml-auto mr-auto min-w-96" key={index}>
+            <div
+              className="card bg-base-100 w-96 shadow-xl mt-10 ml-auto mr-auto min-w-96"
+              key={index}
+            >
               <figure>
                 <video src={video.url} controls></video>
               </figure>
               <div className="card-body">
-                <h2 className="card-title">
-                  {video.title}
-                </h2>
+                <h2 className="card-title">{video.title}</h2>
                 <p>{video.name}</p>
                 <div className="card-actions justify-end">
                   {video.videoTag.map((tag, tagIndex) => (

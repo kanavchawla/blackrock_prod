@@ -179,12 +179,22 @@ const App = () => {
   );
 
   // Prepare data for the stock chart
+  // Calculate the average high price
+  const averageHighPrice =
+    highPrices.reduce((sum, { high }) => sum + high, 0) / highPrices.length;
+
+  // Calculate percentage differences from the average
+  const percentageDifferences = highPrices.map(({ high }) => {
+    return ((high - averageHighPrice) / averageHighPrice) * 100; // Calculate percentage difference
+  });
+
+  // Prepare data for the stock chart
   const stockChartData = {
-    labels: highPrices.map(({ date }) => date),
+    labels: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], // Set labels from 2014 to 2024
     datasets: [
       {
-        label: "High Prices",
-        data: highPrices.map(({ high }) => high),
+        label: "Percentage Difference from Average High Price",
+        data: percentageDifferences, // Use percentage differences as data
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderWidth: 1,
