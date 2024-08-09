@@ -20,7 +20,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="container flex items-center justify-around pt-4 pb-3 sticky top-0 z-50 -mt-8">
+    <nav className="container flex items-center justify-around pt-4 h-0 pb-3 sticky top-0 z-50 -mt-8">
       <div
         className="cursor-pointer rounded-full transition font-semibold duration-300 bg-gray-200 bg-opacity-60 hover:bg-opacity-80 backdrop-blur text-gray-900"
         style={{ transform: "none" }}
@@ -58,7 +58,7 @@ const Nav = () => {
             Comparison
           </li>
         </a>
-        <a href="http://127.0.0.1:5501/index.html">
+        <a href="https://go-cap-paper-trading.netlify.app/">
           <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-blue-400">
             Dummy-trading
           </li>
